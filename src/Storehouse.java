@@ -1,7 +1,22 @@
 import java.sql.Struct;
 import java.util.HashMap;
+import java.util.Objects;
+import java.util.Set;
 
 public class Storehouse {
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Storehouse that = (Storehouse) o;
+        return Objects.equals(store, that.store);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(store);
+    }
 
     private HashMap<String, Product> store;
 
@@ -34,6 +49,10 @@ public class Storehouse {
             return true;
         }
         return false;
+    }
+
+    public Set<String> products(){
+        return store.keySet();
     }
 
 }
