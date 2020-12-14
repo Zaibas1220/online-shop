@@ -45,7 +45,7 @@ public class Storehouse {
     public boolean take(String product){
         Product item = store.get(product);
         if (item != null && item.getStock() > 0) {
-            store.get(product).setStock(store.get(product).getStock() - 1);
+            item.setStock(item.getStock() - 1);
             return true;
         }
         return false;
