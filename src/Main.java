@@ -12,5 +12,7 @@ public class Main {
         Shop shop = new Shop(store, new Scanner(System.in));
         shop.manage("Pekka");
 
+        basket.print();
+
     }
 }
